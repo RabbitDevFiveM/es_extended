@@ -1,6 +1,6 @@
-# es_extended LEGACY / BROKEN / WONTFIX
+# es_extended | Modified to work with [esx_inventory](https://github.com/0rangeFox/esx_inventory)
 
-### Things hapenning here now https://github.com/ESX-Org/es_extended/tree/develop (WIP)
+### I will accept PR or do bug fixes, if you found one, [just report it on section "issues"](https://github.com/0rangeFox/es_extended/issues). You can contact me through discord: Mr John#4117
 
 es_extended is a roleplay framework for FiveM. The to-go framework for creating an economy based roleplay server on FiveM and most popular on the platform, too!
 
