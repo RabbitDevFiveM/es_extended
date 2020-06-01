@@ -253,14 +253,14 @@ ESX.GetItemLabel = function(item)
 	end
 end
 
-ESX.CreatePickup = function(type, name, count, label, playerId, components, tintIndex)
+ESX.CreatePickup = function(type, name, count, label, coords, components, tintIndex)
 	local pickupId = (ESX.PickupId == 65635 and 0 or ESX.PickupId + 1)
-	local xPlayer = ESX.GetPlayerFromId(playerId)
-	local coords = xPlayer.getCoords()
 
 	ESX.Pickups[pickupId] = {
-		type = type, name = name,
-		count = count, label = label,
+		type = type,
+		name = name,
+		count = count,
+		label = label,
 		coords = coords
 	}
 
@@ -271,6 +271,12 @@ ESX.CreatePickup = function(type, name, count, label, playerId, components, tint
 
 	TriggerClientEvent('esx:createPickup', -1, pickupId, label, coords, type, name, components, tintIndex)
 	ESX.PickupId = pickupId
+	return pickupId
+end
+
+ESX.RemovePickup = function(pickupId)
+	ESX.Pickups[pickupId] = nil
+	TriggerClientEvent('esx:removePickup', -1, pickupId)
 end
 
 ESX.DoesJobExist = function(job, grade)

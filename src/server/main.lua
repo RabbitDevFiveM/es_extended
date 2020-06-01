@@ -284,7 +284,7 @@ AddEventHandler('esx:giveInventoryItem', function(target, type, itemName, itemCo
 		if itemCount > 0 and sourceItem.count >= itemCount then
 			if targetXPlayer.canCarryItem(itemName, itemCount) then
 				sourceXPlayer.removeInventoryItem(itemName, itemCount)
-				targetXPlayer.addInventoryItem   (itemName, itemCount)
+				targetXPlayer.addInventoryItem(itemName, itemCount)
 
 				sourceXPlayer.showNotification(_U('gave_item', itemCount, sourceItem.label, targetXPlayer.name))
 				targetXPlayer.showNotification(_U('received_item', itemCount, sourceItem.label, sourceXPlayer.name))
@@ -357,7 +357,7 @@ end)
 
 RegisterNetEvent('esx:removeInventoryItem')
 AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
-	local playerId = source
+	print('esx:removeInventoryItem | Called.')
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if type == 'item_standard' then
@@ -365,13 +365,12 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 			xPlayer.showNotification(_U('imp_invalid_quantity'))
 		else
 			local xItem = xPlayer.getInventoryItem(itemName)
-
 			if (itemCount > xItem.count or xItem.count < 1) then
 				xPlayer.showNotification(_U('imp_invalid_quantity'))
 			else
 				xPlayer.removeInventoryItem(itemName, itemCount)
 				local pickupLabel = ('~y~%s~s~ [~b~%s~s~]'):format(xItem.label, itemCount)
-				ESX.CreatePickup('item_standard', itemName, itemCount, pickupLabel, playerId)
+				ESX.CreatePickup('item_standard', itemName, itemCount, pickupLabel, xPlayer.getCoords())
 				xPlayer.showNotification(_U('threw_standard', itemCount, xItem.label))
 			end
 		end
@@ -386,7 +385,7 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 			else
 				xPlayer.removeAccountMoney(itemName, itemCount)
 				local pickupLabel = ('~y~%s~s~ [~g~%s~s~]'):format(account.label, _U('locale_currency', ESX.Math.GroupDigits(itemCount)))
-				ESX.CreatePickup('item_account', itemName, itemCount, pickupLabel, playerId)
+				ESX.CreatePickup('item_account', itemName, itemCount, pickupLabel, xPlayer.getCoords())
 				xPlayer.showNotification(_U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(account.label)))
 			end
 		end
@@ -408,7 +407,7 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				xPlayer.showNotification(_U('threw_weapon', weapon.label))
 			end
 
-			ESX.CreatePickup('item_weapon', itemName, weapon.ammo, pickupLabel, playerId, components, weapon.tintIndex)
+			ESX.CreatePickup('item_weapon', itemName, weapon.ammo, pickupLabel, xPlayer.getCoords(), components, weapon.tintIndex)
 		end
 	end
 end)
@@ -430,6 +429,7 @@ AddEventHandler('esx:onPickup', function(pickupId)
 	local pickup, xPlayer, success = ESX.Pickups[pickupId], ESX.GetPlayerFromId(source)
 
 	if pickup then
+        print('esx:onPickup | Pickup data: ' .. json.encode(table.unpack(pickup)))
 		if pickup.type == 'item_standard' then
 			if xPlayer.canCarryItem(pickup.name, pickup.count) then
 				xPlayer.addInventoryItem(pickup.name, pickup.count)
@@ -455,8 +455,7 @@ AddEventHandler('esx:onPickup', function(pickupId)
 		end
 
 		if success then
-			ESX.Pickups[pickupId] = nil
-			TriggerClientEvent('esx:removePickup', -1, pickupId)
+			ESX.RemovePickup(pickupId)
 		end
 	end
 end)
