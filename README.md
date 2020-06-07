@@ -1,6 +1,4 @@
-# es_extended | Modified to work with [esx_inventory](https://github.com/0rangeFox/esx_inventory)
-
-### I will accept PR or do bug fixes, if you found one, [just report it on section "issues"](https://github.com/0rangeFox/es_extended/issues). You can [join on my support discord](https://discord.gg/5vrjddj) to get help.
+# es_extended 1.3.0
 
 es_extended is a roleplay framework for FiveM. The to-go framework for creating an economy based roleplay server on FiveM and most popular on the platform, too!
 
@@ -10,25 +8,23 @@ Featuring many extra resources to fit roleplaying servers, here's a taste of wha
 - esx_policejob: patrol the city and arrest players commiting crime, with armory, outfit room and garages
 - esx_vehicleshop: roleplay working in an vehicle dealership where you sell cars to players
 
-ESX was initially developed by Gizz back in 2017 for his friend as the were creating an FiveM server and there wasn't any economy roleplaying frameworks available. The original code was written within a week or two and later open sourced, it has ever since been improved and parts been rewritten to further improve on it.
+This es_extended doesn't have UI for the inventory. If you are looking for one, check this [esx_inventory](https://github.com/0rangeFox/esx_inventory) and is highly recommended to use.
 
 ## Links & Read more
 
-- [ESX Forum](https://forum.esx-framework.org/)
-- [ESX Documentation](https://wiki.esx-framework.org/)
-- [ESX Development Discord](https://discord.me/esx)
+- [Discord Support](https://discord.gg/zysTbuU)
 - [FiveM Native Reference](https://runtime.fivem.net/doc/reference.html)
 
 ## Features
 
-- Weight based inventory system
-- Weapons support, including support for attachments and tints
+- Weight and Limit based inventory system
+- [WIP] Weapons support, ~~including support for attachments and tints~~
 - Supports different money accounts (defaulted with cash, bank and black money)
-- Many official resources available in our GitHub
 - Job system, with grades and clothes support
 - Supports multiple languages, most strings are localized
 - Easy to use API for developers to easily integrate ESX to their projects
 - Register your own commands easily, with argument validation, chat suggestion and using FXServer ACL
+- Compatibility with all latest version of scripts from [ESX-Org](https://github.com/ESX-Org).
 
 ## Requirements
 
