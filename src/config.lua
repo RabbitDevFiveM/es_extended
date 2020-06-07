@@ -9,8 +9,12 @@ Config.Accounts = {
 
 Config.StartingAccountMoney = {bank = 50000}
 
-Config.EnableSocietyPayouts = false -- pay from the society account that the player is employed at? Requirement: esx_society
-Config.EnableHud            = true -- enable the default hud? Display current job and accounts (black, bank & cash)
-Config.MaxWeight            = 24   -- the max inventory weight without backpack
-Config.PaycheckInterval     = 7 * 60000 -- how often to recieve pay checks in milliseconds
+Config.EnableSocietyPayouts = false -- Pay from the society account that the player is employed at? Requirement: esx_society
+Config.EnableHud            = true -- Enable the default hud? Display current job and accounts (black, bank & cash)
+Config.MaxWeight            = 24   -- The max inventory weight without backpack
+Config.PaycheckInterval     = 7 * 60000 -- How often to recieve pay checks in milliseconds
+
+Config.DrawDistance			= 30
+Config.Draw3DDistance		= 5
+
 Config.EnableDebug          = false

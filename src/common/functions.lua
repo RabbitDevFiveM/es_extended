@@ -98,3 +98,11 @@ end
 ESX.Round = function(value, numDecimalPlaces)
 	return ESX.Math.Round(value, numDecimalPlaces)
 end
+
+ESX.GetOrElse = function(value, default)
+	if value ~= nil then
+		return value
+	else
+		return default
+	end
+end

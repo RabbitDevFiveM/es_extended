@@ -1,24 +1,26 @@
-ESX                           = {}
-ESX.PlayerData                = {}
-ESX.PlayerLoaded              = false
-ESX.CurrentRequestId          = 0
-ESX.ServerCallbacks           = {}
-ESX.TimeoutCallbacks          = {}
+ESX								= {}
+ESX.PlayerData					= {}
+ESX.PlayerLoaded				= false
+ESX.CurrentRequestId			= 0
+ESX.ServerCallbacks				= {}
+ESX.TimeoutCallbacks			= {}
 
-ESX.UI                        = {}
-ESX.UI.HUD                    = {}
-ESX.UI.HUD.RegisteredElements = {}
-ESX.UI.Menu                   = {}
-ESX.UI.Menu.RegisteredTypes   = {}
-ESX.UI.Menu.Opened            = {}
+ESX.UI							= {}
+ESX.UI.Blips					= {}
+ESX.UI.Markers					= {}
+ESX.UI.HUD						= {}
+ESX.UI.HUD.RegisteredElements	= {}
+ESX.UI.Menu						= {}
+ESX.UI.Menu.RegisteredTypes		= {}
+ESX.UI.Menu.Opened				= {}
 
-ESX.Game                      = {}
-ESX.Game.Utils                = {}
+ESX.Game						= {}
+ESX.Game.Utils					= {}
 
-ESX.Scaleform                 = {}
-ESX.Scaleform.Utils           = {}
+ESX.Scaleform					= {}
+ESX.Scaleform.Utils				= {}
 
-ESX.Streaming                 = {}
+ESX.Streaming					= {}
 
 ESX.SetTimeout = function(msec, cb)
 	table.insert(ESX.TimeoutCallbacks, {
