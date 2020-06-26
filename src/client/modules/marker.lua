@@ -2,7 +2,7 @@ local markers, drawingMarkers, CurrentMarker, HasAlreadyEnteredMarker = {}, {}, 
 
 function ESX.UI.Markers.Register(marker)
     if marker.coords == nil then
-        print(('[ExtendedMode] [^3WARNING^7] Ignoring on register of marker with name "%s" due to missing coords'):format(marker.name))
+        print(('[es_extended] [^3WARNING^7] Ignoring on register of marker with name "%s" due to missing coords'):format(marker.name))
         return
     end
 
@@ -15,7 +15,7 @@ function ESX.UI.Markers.Register(marker)
     end
 
     if Config.EnableDebug then
-        print(('[ExtendedMode] [^2INFO^7] Registering a marker with name "%s^7"'):format(marker.name))
+        print(('[es_extended] [^2INFO^7] Registering a marker with name "%s^7"'):format(marker.name))
     end
 
     if markers[marker.name] ~= nil then
