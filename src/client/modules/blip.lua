@@ -40,7 +40,7 @@ function ESX.UI.Blips.Update(blip)
             blips[blip.id] = nil
             tempBlip.coords = blip.coords
             tempBlip.display = blip.display
-            ESX.Blips.Register(tempBlip)
+            ESX.UI.Blips.Register(tempBlip)
             return
         end
     end
