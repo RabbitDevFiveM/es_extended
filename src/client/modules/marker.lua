@@ -77,11 +77,11 @@ Citizen.CreateThread(function()
 
         if isInMarker and not HasAlreadyEnteredMarker then
             HasAlreadyEnteredMarker = true
-            ESX.Markers.Enter(lastMarker)
+            ESX.UI.Markers.Enter(lastMarker)
         end
         if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
             HasAlreadyEnteredMarker = false
-            ESX.Markers.Exit()
+            ESX.UI.Markers.Exit()
         end
     end
 end)
