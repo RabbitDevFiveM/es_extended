@@ -1,5 +1,6 @@
-# es_extended 1.3.0
+## Obsolete project, don't use it for production, it is advisable only for developers if they want to make improvements.
 
+# es_extended 1.3.0
 es_extended is a roleplay framework for FiveM. The to-go framework for creating an economy based roleplay server on FiveM and most popular on the platform, too!
 
 Featuring many extra resources to fit roleplaying servers, here's a taste of what's available:
