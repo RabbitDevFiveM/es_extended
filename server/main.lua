@@ -14,8 +14,8 @@ function onPlayerJoined(playerId)
 	local identifier
 
 	for k,v in ipairs(GetPlayerIdentifiers(playerId)) do
-		if string.match(v, 'license:') then
-			identifier = string.sub(v, 9)
+		if string.match(v, 'steam:') then
+			identifier = v
 			break
 		end
 	end
@@ -56,8 +56,8 @@ AddEventHandler('playerConnecting', function(name, setCallback, deferrals)
 	Citizen.Wait(100)
 
 	for k,v in ipairs(GetPlayerIdentifiers(playerId)) do
-		if string.match(v, 'license:') then
-			identifier = string.sub(v, 9)
+		if string.match(v, 'steam:') then
+			identifier = v
 			break
 		end
 	end
