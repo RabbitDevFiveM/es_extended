@@ -275,6 +275,12 @@ function CreateExtendedPlayer(playerId, identifier, group, accounts, inventory, 
 						self.setAccountMoney('money', item.count)
 					end
 				end
+			else
+				TriggerClientEvent('mythic_notify:client:SendAlert', self.source, {
+					type = 'error', 
+					text = "น้ำหนักตัวของคุณเต็ม " .. self.maxWeight .. " แล้ว" ,
+					length = 7500
+				})
 			end
 		end
 	end
