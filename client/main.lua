@@ -77,6 +77,20 @@ AddEventHandler('esx:playerLoaded', function(playerData)
 		FreezeEntityPosition(PlayerPedId(), false)
 		DoScreenFadeIn(10000)
 		StartServerSyncLoops()
+
+		local ped = GetPlayerPed(-1)    --ผู้เล่น
+		local has = GetEntityModel(ped)    --เช็ค has model ของผู้เล่น
+		if has == -1667301416 then        --ผู้หญิง
+			if not IsEntityDead(ped) then    --เมื่อผู้เล่นไม่ได้ตาย
+				SetPedMaxHealth(ped, 200)    --ตั้งค่าจำนวนเลือดสูงสุด = 200
+				SetEntityHealth(ped, 200)    --เพิ่มเลือดให้ = 200
+			end
+		elseif has == 1885233650 then    --ผู้ชาย
+			if not IsEntityDead(ped) then    ----เมื่อผู้เล่นไม่ได้ตาย
+				SetPedMaxHealth(ped, 200)    --ตั้งค่าจำนวนเลือดสูงสุด = 200
+				SetEntityHealth(ped, 200)    --เพิ่มเลือดให้ = 200
+			end
+		end
 	end)
 
 	TriggerEvent('esx:loadingScreenOff')
